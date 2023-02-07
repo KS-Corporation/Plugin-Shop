@@ -65,7 +65,7 @@ class StripeMethod extends PaymentMethod
             'quantity' => $item->quantity,
         ]);
 
-        $payment = $this->createPayment($cart, $amount, $currency);
+        $payment = $this->createPayment($cart, $currency, $amount);
 
         $successUrl = route('shop.payments.success', [$this->id, '%id%']);
         $methods = $this->gateway->data['methods'] ?? [];

@@ -38,6 +38,8 @@ class CategoryRequest extends FormRequest
             'description' => ['nullable', 'string'],
             'cumulate_purchases' => ['filled', 'boolean'],
             'is_enabled' => ['filled', 'boolean'],
+            'image' => ['nullable', 'image'],
+
         ];
     }
 }

@@ -31,7 +31,7 @@ class PayGolMethod extends PaymentMethod
 
     public function startPayment(Cart $cart, float $amount, string $currency)
     {
-        $payment = $this->createPayment($cart, $amount, $currency);
+        $payment = $this->createPayment($cart, $currency, $amount);
         $user = auth()->user();
 
         $paygol = $this->createWebcheckout();
@@ -44,7 +44,7 @@ class PayGolMethod extends PaymentMethod
         $paygol->setRedirects($redirectUrls);
 
         $paygol->setCountry($this->gateway->data['country']);
-        $paygol->setPrice($amount, $currency);
+        $paygol->setPrice($currency, $amount);
 
         $payer = new Payer();
         $payer->setEmail($user->email);

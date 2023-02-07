@@ -38,7 +38,7 @@ class PayPalExpressCheckout extends PaymentMethod
 
     public function startPayment(Cart $cart, float $amount, string $currency)
     {
-        $payment = $this->createPayment($cart, $amount, $currency);
+        $payment = $this->createPayment($cart, $currency, $amount);
 
         $items = $cart->content()->map(fn (CartItem $cartItem) => [
             'name' => $cartItem->name(),

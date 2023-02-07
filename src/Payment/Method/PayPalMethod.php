@@ -28,7 +28,7 @@ class PayPalMethod extends PaymentMethod
 
     public function startPayment(Cart $cart, float $amount, string $currency)
     {
-        $payment = $this->createPayment($cart, $amount, $currency);
+        $payment = $this->createPayment($cart, $currency, $amount);
 
         $attributes = [
             'cmd' => '_xclick',

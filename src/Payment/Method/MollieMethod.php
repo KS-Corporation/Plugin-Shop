@@ -28,7 +28,7 @@ class MollieMethod extends PaymentMethod
     {
         $mollie = $this->createMollieClient();
 
-        $payment = $this->createPayment($cart, $amount, $currency);
+        $payment = $this->createPayment($cart, $currency, $amount);
 
         $molliePayment = $mollie->payments->create([
             'amount' => [

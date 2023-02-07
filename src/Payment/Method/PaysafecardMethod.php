@@ -63,7 +63,7 @@ class PaysafecardMethod extends PaymentMethod
             return $this->errorResponse();
         }
 
-        $this->createPayment($cart, $amount, $currency, $response['id']);
+        $this->createPayment($cart, $currency, $amount, $response['id']);
 
         return redirect()->away($response['redirect']['auth_url']);
     }

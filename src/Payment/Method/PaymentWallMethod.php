@@ -33,7 +33,7 @@ class PaymentWallMethod extends PaymentMethod
 
         $user = auth()->user();
 
-        $payment = $this->createPayment($cart, $amount, $currency);
+        $payment = $this->createPayment($cart, $currency, $amount);
 
         $widget = new Widget(
             $user->id,

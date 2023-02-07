@@ -1,7 +1,7 @@
 <?php
 
 namespace Azuriom\Plugin\Shop\Models;
-
+use Azuriom\Models\Traits\HasImage;
 use Azuriom\Models\Traits\HasTablePrefix;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -27,6 +27,7 @@ use Illuminate\Support\HtmlString;
  */
 class Category extends Model
 {
+    use HasImage;
     use HasTablePrefix;
 
     /**
@@ -42,7 +43,7 @@ class Category extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'slug', 'description', 'position', 'parent_id', 'cumulate_purchases', 'is_enabled',
+        'name', 'slug', 'description', 'position', 'parent_id', 'cumulate_purchases', 'is_enabled', 'image',
     ];
 
     /**
