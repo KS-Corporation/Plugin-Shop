@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <ul>
                         @if($payment->gateway_type !== 'azuriom')
-                            <li>{{ trans('shop::messages.fields.price') }}: {{ $payment->price }} {{ currency_display($payment->currency) }}</li>
+                            <li>{{ trans('shop::messages.fields.price') }}: {{ currency_display($payment->currency) } {{ $payment->price }}}</li>
                             <li>{{ trans('messages.fields.type') }}: {{ $payment->getTypeName() }}</li>
                             <li>
                                 {{ trans('messages.fields.status') }}:

@@ -39,7 +39,7 @@ class PaymentPaid extends Notification
      */
     public function toMail($notifiable)
     {
-        $total = $this->payment->price.' '.currency_display($this->payment->currency);
+        $total = currency_display($this->payment->currency.' '.$this->payment->price);
 
         return (new MailMessage())
             ->subject(trans('shop::mails.payment.subject'))

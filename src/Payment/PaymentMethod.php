@@ -115,7 +115,7 @@ abstract class PaymentMethod
 
     protected function createPayment(Cart $cart, float $price, string $currency, string $paymentId = null)
     {
-        return PaymentManager::createPayment($cart, $price, $currency, $this->id, $paymentId);
+        return PaymentManager::createPayment($cart, $currency, $price, $this->id, $paymentId);
     }
 
     protected function processPayment(?Payment $payment, string $paymentId = null)

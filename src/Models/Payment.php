@@ -118,7 +118,7 @@ class Payment extends Model
         $embed = Embed::create()
             ->title(trans('shop::messages.payment.webhook'))
             ->author($this->user->name, null, $this->user->getAvatar())
-            ->addField(trans('shop::messages.fields.price'), $this->price.' '.currency_display($this->currency))
+            ->addField(trans('shop::messages.fields.price'), currency_display($this->currency), " ", $this->price)
             ->addField(trans('messages.fields.type'), $this->getTypeName())
             ->addField(trans('shop::messages.fields.payment_id'), $this->transaction_id ?? trans('messages.none'))
             ->url(route('shop.admin.payments.show', $this))
